@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: qos-pod-besteffort
+  labels:
+    app.kubernetes.io/name: qos-pod-besteffort
+spec:
+  containers:
+  - name: qos-pod-besteffort
+    image: nginx:latest
+    ports:
+      - containerPort: 80

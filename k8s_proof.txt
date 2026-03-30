@@ -1,0 +1,21 @@
+--- Task 1: nodeName Pod ---
+NAME            READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+static-pinned   1/1     Running   0          11s   10.244.1.77   minikube   <none>           <none>
+
+--- Task 2: NodeSelector & Pending Status ---
+NAME            READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+selector-demo   1/1     Running   0          90s   10.244.1.79   minikube   <none>           <none>
+NAME               READY   STATUS    RESTARTS   AGE
+pending-selector   0/1     Pending   0          35s
+
+--- Task 3: NoExecute Eviction Proof ---
+(no output here because the pod is evicted and deleted by the previous taint)
+--- Task 5: QoS Classes Verification ---
+affinity-demo	Burstable
+pending-selector	Burstable
+qos-pod-besteffort	BestEffort
+qos-pod-burstable	Burstable
+qos-pod-guaranteed	Guaranteed
+
+--- Task 7: Static Pod Proof ---
+static-nginx-minikube   1/1     Running   0          30s    10.244.1.94   minikube   <none>           <none>

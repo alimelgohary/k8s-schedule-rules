@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pending-selector
+  labels:
+    app.kubernetes.io/name: pending-selector
+spec:
+  nodeSelector:
+    env: lab
+  containers:
+  - name: pending-selector
+    image: nginx:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+      requests:
+        memory: "100Mi"
+        cpu: "300m"
+    ports:
+      - containerPort: 80

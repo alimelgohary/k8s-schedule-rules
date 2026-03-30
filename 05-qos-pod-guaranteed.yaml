@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: qos-pod-guaranteed
+  labels:
+    app.kubernetes.io/name: qos-pod-guaranteed
+spec:
+  containers:
+  - name: qos-pod-guaranteed
+    image: nginx:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+      requests:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
